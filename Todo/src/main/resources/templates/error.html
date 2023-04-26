@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jhay To-do</title>
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+</head>
+<body>
+
+<input type="checkbox" id="check">
+<!--header area start-->
+<header style="background: black">
+  <div class="left_area">
+    <label for="check">
+      <i class="fas fa-bars" id="sidebar_btn"></i>
+    </label>
+  </div>
+  <div class="right_area" style="display: flex; justify-content: space-between; margin-right: 40px">
+    <a th:href="@{/landing}"><h3>Jhay <span>To-Do</span></h3></a>
+    <form method="post" th:action="@{/searchTask}" class="custom-form" style="display: flex;">
+      <label>
+        <input type="text" name="keyword" placeholder="Enter Search Keyword" style="height: 100%; border: 1px solid white;" required>
+      </label>
+      <div>
+        <button type="submit" class="btn btn-signup" style="height: 100%;">
+          <i class="fa fa-search"></i> Search
+        </button>
+      </div>
+    </form>
+  </div>
+</header>
+<!--header area end-->
+
+<div class="content2" style="margin-top: 60px" th:if="${errorResponse != null}">
+  <h1 th:text="${errorResponse.message}"></h1>
+  <h3>Previous Page: <a th:href="${errorResponse.referer}" th:text="${errorResponse.referer}"></a></h3>
+</div>
+</body>
+</html>

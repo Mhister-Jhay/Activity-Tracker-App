@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Jhay-Todo Sign Up</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-c9RbZkI6H0x6vTTgSzKjw0z5ev6U5P6Bhe44kFX9ofmU0Kx7lxEhA4yG+Be4E4bvH2iLk/DhZhnnIg9ZS37ciQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" th:href="@{/css/register.css}">
+    <!-- Include SweetAlert CSS and JS files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+
+</head>
+<body style="background-image: url(/img/background1.png);">
+<header>
+    <button>Jhay-Todo</button>
+    <div>
+        <p>Already Have An Account? <a th:href="@{/login}"><button class="btn btn-login">Login</button></a></p>
+    </div>
+</header>
+<div class="container">
+    <form method="post" th:action="@{/registerUser}" th:object="${userForm}" class="form signup-form" >
+        <h1><img class="sticker-image" th:src="@{/img/sticker.png}" alt="Sticker Notes Image"> Sign up for Jhay-Todo</h1>
+        <div class="form-group">
+            <i class="fas fa-user" style="display: inline-block;"></i>
+            <input type="text" id="firstname" name="firstname" placeholder="First Name" th:field="*{firstName}" required>
+        </div>
+        <div class="form-group">
+            <i class="fas fa-user" style="display: inline-block;"></i>
+            <input type="text" id="lastname" name="lastname" placeholder="Last Name" th:field="*{lastName}" required>
+        </div>
+        <div class="form-group">
+            <i class="fas fa-envelope" style="display: inline-block;"></i>
+            <input type="email" id="email" name="email" placeholder="Email" th:field="*{email}" required>
+        </div>
+        <div class="form-group">
+            <i class="fas fa-phone" style="display: inline-block;"></i>
+            <input type="tel" id="phonenumber" name="phonenumber" placeholder="Phone Number" th:field="*{phoneNumber}"  required>
+        </div>
+        <div class="form-group">
+            <i class="fas fa-lock" style="display: inline-block;"></i>
+            <input type="password" id="password" name="password" placeholder="Password" th:field="*{password}" required>
+        </div>
+        <div class="form-group">
+            <i class="fas fa-lock" style="display: inline-block;"></i>
+            <input type="password" id="password2" name="password" placeholder="Confirm Password" th:field="*{confirmPassword}" required>
+        </div>
+        <input type="submit" class="login-button" value="Sign Up">
+    </form>
+</div>
+<input type="hidden" id="userStatus" th:value="${userStatus}" />
+<script>
+    var userStatus = document.getElementById("userStatus").value;
+    if (userStatus != null && userStatus !== "") {
+        swal({
+            text: userStatus,
+            button: false,
+            timer: 2000,
+            width: "30rem",
+            padding: "2rem",
+        });
+    }
+</script>
+<!-- JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" integrity="sha512-XzlbogvGo8msaWg/fZicLjY9EMpxDRfr8QxIjthzakkk6arJ+5p5I6UcfNSrLjJ6X9/4jUBaJHl4D/y1gG4V+A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</body>
+</html>
+

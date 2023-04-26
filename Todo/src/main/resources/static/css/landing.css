@@ -1,0 +1,126 @@
+/* CSS for dark theme */
+body {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: sans-serif;
+    margin: 0;
+    padding-top: 20px; /* Add padding to create small margin between header and top of screen */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Use flexbox layout to make footer stick to bottom of screen */
+}
+
+/* CSS for header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+/* CSS for welcome message */
+.welcome {
+    font-size: 1.2em;
+    color: white;
+    font-weight: bold;
+}
+
+/* CSS for buttons */
+.btn {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+/* CSS for login and signup buttons */
+.btn-login {
+    background-color: #6c5ce7;
+    color: #fff;
+    margin-right: 30px;
+}
+
+.btn-signup {
+    background-color: #fdcb6e;
+    color: #fff;
+}
+
+/* CSS for body */
+/* CSS for container div */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.body {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* CSS for app name */
+.jhay-todo {
+    font-size: 4em;
+    color: white;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    margin-right: 100px;
+}
+
+/* CSS for sticker image */
+.sticker-image {
+    width: 50%;
+    max-width: 100%;
+    height: auto;
+    font-style: italic;
+    margin-bottom: 50px;
+    margin-left: 100px;
+}
+
+/* CSS for moto */
+.moto {
+    text-align: center;
+    color: white;
+    margin-top: 30px;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-right: 100px;
+}
+
+@media (min-width: 768px) {
+    .body {
+        padding: 50px;
+    }
+}
+
+/* CSS for footer */
+footer {
+    padding: 10px;
+    margin-top: auto;
+    width: 100%;
+    text-align: center;
+}
+
+.footer-content {
+    font-size: 0.8rem;
+    color: #f1f4f4;
+}

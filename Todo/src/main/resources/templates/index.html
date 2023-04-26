@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jhay-Todo</title>
+  <link rel="stylesheet" th:href="@{/css/landing.css}">
+</head>
+<body style="background-image: url(/img/background1.png);">
+<header class="header">
+  <div class="welcome"> Welcome</div>
+  <div>
+    <a class="btn btn-signup" th:href="@{/signup}">Sign Up</a>
+    <a class="btn btn-login" th:href="@{/login}">Login</a>
+  </div>
+</header>
+<div class="body">
+  <div class="container" style="display: flex; flex-direction: row; justify-content: space-between;">
+    <div>
+      <div class="jhay-todo">Jhay-Todo</div>
+      <div class="moto">The best way to get things done!</div>
+    </div>
+    <div>
+      <img class="sticker-image" th:src="@{/img/sticker.png}" alt="Sticker Notes Image">
+    </div>
+  </div>
+</div>
+<footer>
+  <div class="footer-content">
+    <p>&copy; 2023 Jhay-Todo. All Rights Reserved.</p>
+  </div>
+</footer>
+</body>
+</html>
